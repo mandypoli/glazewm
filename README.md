@@ -6,227 +6,270 @@
   <img src="./resources/assets/logo.svg" width="230" alt="GlazeWM logo" />
   <br>
 
-# GlazeWM
+# GlazeWM 
+*traduzido em (pt-br)*
 
-**A tiling window manager for Windows inspired by i3wm.**
+**Um gerenciador de janelas do tipo *tiling* para Windows, inspirado no i3wm.**
 
 [![Discord invite][discord-badge]][discord-link]
 [![Downloads][downloads-badge]][downloads-link]
 [![Good first issues][issues-badge]][issues-link]
 
-GlazeWM lets you easily organize windows and adjust their layout on the fly by using keyboard-driven commands.
+GlazeWM permite organizar janelas e ajustar o layout delas rapidamente, utilizando comandos via teclado.
 
-[Installation](#installation) •
-[Default keybindings](#default-keybindings) •
-[Config documentation](#config-documentation) •
+[Instalação](#instalação) •
+[Keybindings padrão](#keybindings-padrão) •
+[Documentação de configs](#documentação-de-configs) •
 [FAQ](#faq) •
-[Contributing ↗](https://github.com/glzr-io/glazewm/blob/main/CONTRIBUTING.md)
+[Contribuindo ↗](https://github.com/glzr-io/glazewm/blob/main/Contribuindo.md)
 
 ![Demo video][demo-video]
 
 </div>
 
-### 🌟 Key features
+### 🌟 Principais utilidades
 
-- Simple YAML configuration
-- Multi-monitor support
-- Customizable rules for specific windows
-- Easy one-click installation
-- Integration with [Zebar](https://github.com/glzr-io/zebar) as a status bar
+- Configuração simples em YAML
+- Suporte a múltiplos monitores
+- Regras customizáveis para janelas específicas
+- Instalação fácil (um clique)
+- Integração com [Zebar](https://github.com/glzr-io/zebar) como barra de status
 
-## Installation
+##  Instalação
 
-**The latest version of GlazeWM is downloadable via [releases](https://github.com/glzr-io/GlazeWM/releases).** Zebar can optionally be installed as well via a checkbox during installation.
+A versão mais recente do GlazeWM pode ser baixada via [releases](https://github.com/glzr-io/GlazeWM/releases). O Zebar pode ser instalado opcionalmente marcando uma caixa durante a instalação.
 
-GlazeWM is also available through several package managers:
+O GlazeWM também está disponível por gerenciadores de pacotes:
 
 **Winget**
-
 ```sh
 winget install GlazeWM
 ```
 
 **Chocolatey**
-
 ```sh
 choco install glazewm
 ```
 
 **Scoop**
-
 ```sh
 scoop bucket add extras
 scoop install extras/glazewm
 ```
 
-## Contributing
+## 🤝 Contribuindo
 
-Help fix something that annoys you, or add a feature you've been wanting for a long time! Contributions are very welcome.
+Ajude a corrigir algo que te incomoda, ou adicione uma funcionalidade que você queria há tempos! Contribuições são muito bem-vindas.
 
-Local development and guidelines are available in the [contributing guide](https://github.com/glzr-io/glazewm/blob/main/CONTRIBUTING.md).
+Guia de desenvolvimento local disponível em: [Contribuindo guide](https://github.com/glzr-io/glazewm/blob/main/Contribuindo.md).
 
-## Default keybindings
+---
 
-On the first launch of GlazeWM, a default configuration can optionally be generated.
+##  Keybindings padrão 
 
-Below is a cheat sheet of all available commands and their default keybindings.
+> Baseado no `sample-config.yaml` padrão do GlazeWM. Se você usa um config customizado, essas teclas podem estar diferentes.
+
+### Foco e movimentação de janelas
+
+| Keybind | Função |
+|---|---|
+| `Alt + H` / `Alt + ←` | Focar janela à esquerda |
+| `Alt + L` / `Alt + →` | Focar janela à direita |
+| `Alt + K` / `Alt + ↑` | Focar janela acima |
+| `Alt + J` / `Alt + ↓` | Focar janela abaixo |
+| `Alt + Shift + H` / `Alt + Shift + ←` | Mover janela focada para a esquerda |
+| `Alt + Shift + L` / `Alt + Shift + →` | Mover janela focada para a direita |
+| `Alt + Shift + K` / `Alt + Shift + ↑` | Mover janela focada para cima |
+| `Alt + Shift + J` / `Alt + Shift + ↓` | Mover janela focada para baixo |
+
+### Redimensionar janela
+
+| Keybind | Função |
+|---|---|
+| `Alt + U` | Diminuir largura (-2%) |
+| `Alt + P` | Aumentar largura (+2%) |
+| `Alt + O` | Aumentar altura (+2%) |
+| `Alt + I` | Diminuir altura (-2%) |
+| `Alt + R` | Ativar modo de redimensionamento (binding mode "resize") |
+| `H` / `←` *(no modo resize)* | Diminuir largura |
+| `L` / `→` *(no modo resize)* | Aumentar largura |
+| `K` / `↑` *(no modo resize)* | Aumentar altura |
+| `J` / `↓` *(no modo resize)* | Diminuir altura |
+| `Escape` / `Enter` *(no modo resize)* | Sair do modo resize (voltar ao padrão) |
+
+### Estado e layout da janela
+
+| Keybind | Função |
+|---|---|
+| `Alt + V` | Alternar direção do tiling (horizontal/vertical) |
+| `Alt + Space` | Alternar foco entre janelas floating / tiling |
+| `Alt + Shift + Space` | Alternar janela focada entre floating / tiling |
+| `Alt + X` | Alternar janela focada entre maximizada / restaurada |
+| `Alt + M` | Minimizar janela focada |
+| `Alt + Shift + Q` | Fechar janela focada |
+
+### Sistema / geral
+
+| Keybind | Função |
+|---|---|
+| `Alt + Shift + E` | Encerrar o processo do GlazeWM com segurança |
+| `Alt + Shift + R` | Recarregar o arquivo de configuração |
+| `Alt + Enter` | Abrir terminal CMD |
+
+### Workspaces (áreas de trabalho)
+
+| Keybind | Função |
+|---|---|
+| `Alt + 1` … `Alt + 9` | Focar workspace 1 a 9 |
+| `Alt + Y` | Focar o workspace usado mais recentemente |
+| `Alt + T` | Focar o próximo workspace (definido em `workspaces`) |
+| `Alt + Shift + T` | Focar o workspace anterior |
+| `Alt + Shift + 1` … `Alt + Shift + 9` | Mover janela focada para o workspace 1–9 e focar nele |
+
+### Monitores
+
+| Keybind | Função |
+|---|---|
+| `Alt + A` | Mover workspace focado para o monitor à esquerda |
+| `Alt + F` | Mover workspace focado para o monitor à direita |
+| `Alt + D` | Mover workspace focado para o monitor acima |
+| `Alt + S` | Mover workspace focado para o monitor abaixo |
+
+---
 
 ![Infographic](/resources/assets/cheatsheet.png)
 
-## Config documentation
+##  Documentação de configs
 
-The [default config](https://github.com/glzr-io/glazewm/blob/main/resources/assets/sample-config.yaml) file is generated at `%userprofile%\.glzr\glazewm\config.yaml`.
+O arquivo de [config padrão](https://github.com/glzr-io/glazewm/blob/main/resources/assets/sample-config.yaml) é gerado em `%userprofile%\.glzr\glazewm\config.yaml`.
 
-To use a different config file location, you can launch the GlazeWM executable with the CLI argument `--config="..."`, like so:
+Para usar um local diferente, inicie o executável do GlazeWM com o argumento de CLI `--config="..."`:
 
 ```sh
 ./glazewm.exe start --config="C:\<PATH_TO_CONFIG>\config.yaml"
 ```
 
-Or pass a value for the `GLAZEWM_CONFIG_PATH` environment variable:
+Ou defina a variável de ambiente `GLAZEWM_CONFIG_PATH`:
 
 ```sh
 setx GLAZEWM_CONFIG_PATH "C:\<PATH_TO_CONFIG>\config.yaml"
 ```
 
-With the benefit of using a custom path being that you can choose a different name for the config file, such as `glazewm.yaml`.
+A vantagem de usar um caminho customizado é poder escolher um nome diferente para o arquivo, como `glazewm.yaml`.
 
 ### Config: General
 
 ```yaml
 general:
-  # Commands to run when the WM has started (e.g. to run a script or launch
-  # another application).
+  # Comandos a executar quando o WM iniciar (ex.: rodar um script ou abrir
+  # outro aplicativo).
   startup_commands: []
 
-  # Commands to run just before the WM is shutdown.
+  # Comandos a executar pouco antes do WM ser encerrado.
   shutdown_commands: []
 
-  # Commands to run after the WM config has reloaded.
+  # Comandos a executar depois que o config do WM for recarregado.
   config_reload_commands: []
 
-  # Whether to automatically focus windows underneath the cursor.
+  # Se deve focar automaticamente janelas sob o cursor.
   focus_follows_cursor: false
 
-  # Whether to switch back and forth between the previously focused
-  # workspace when focusing the current workspace.
+  # Se deve alternar entre o workspace focado anteriormente e o atual
+  # ao focar o workspace atual novamente.
   toggle_workspace_on_refocus: false
 
   cursor_jump:
-    # Whether to automatically move the cursor on the specified trigger.
+    # Se deve mover automaticamente o cursor no gatilho especificado.
     enabled: true
 
-    # Trigger for cursor jump:
-    # - 'monitor_focus': Jump when focus changes between monitors.
-    # - 'window_focus': Jump when focus changes between windows.
+    # Gatilho para o salto do cursor:
+    # - 'monitor_focus': Salta quando o foco muda entre monitores.
+    # - 'window_focus': Salta quando o foco muda entre janelas.
     trigger: "monitor_focus"
 ```
 
 ### Config: Keybindings
 
-The available keyboard shortcuts can be customized via the `keybindings` option. A keybinding consists of one or more key combinations and one or more commands to run when pressed.
+Os atalhos de teclado disponíveis podem ser customizados pela opção `keybindings`. Um keybinding consiste em uma ou mais combinações de teclas e um ou mais comandos a executar quando pressionado.
 
-It's recommended to use the alt key for keybindings. The Windows key is unfortunately a pain to remap, since the OS reserves certain keybindings (e.g. `lwin+l`).
+É recomendado usar a tecla `alt` para keybindings. A tecla Windows é, infelizmente, difícil de remapear, já que o sistema operacional reserva certos atalhos (ex.: `lwin+l`).
 
 ```yaml
 keybindings:
-  # Command(s) to run.
+  # Comando(s) a executar.
   - commands: ["focus --workspace 1"]
 
-    # Key combination(s) to trigger the keybinding.
+    # Combinação(ões) de teclas para acionar o keybinding.
     bindings: ["alt+1"]
 
-  # Multiple commands can be run in a sequence (e.g. to move a window to a
-  # workspace + focus workspace).
+  # Múltiplos comandos podem ser executados em sequência (ex.: mover uma
+  # janela para um workspace + focar o workspace).
   - commands: ["move --workspace 1", "focus --workspace 1"]
     bindings: ["alt+shift+1"]
 ```
 
-**Full list of keys that can be used for keybindings:**
+**Lista completa de teclas que podem ser usadas em keybindings:**
 
-<details>
-<summary>Keys list</summary>
+| Tecla | Descrição |
+|---|---|
+| `a` - `z` | Teclas alfabéticas |
+| `0` - `9` | Teclas numéricas |
+| `numpad0` - `numpad9` | Teclas do teclado numérico |
+| `f1` - `f24` | Teclas de função |
+| `shift` | Tecla SHIFT (esquerda ou direita) |
+| `lshift` | Tecla SHIFT esquerda |
+| `rshift` | Tecla SHIFT direita |
+| `control` | Tecla CTRL (esquerda ou direita) |
+| `lctrl` | Tecla CTRL esquerda |
+| `rctrl` | Tecla CTRL direita |
+| `alt` | Tecla ALT (esquerda ou direita) |
+| `lalt` | Tecla ALT esquerda |
+| `ralt` | Tecla ALT direita |
+| `lwin` | Tecla Windows ⊞ esquerda |
+| `rwin` | Tecla Windows ⊞ direita |
+| `space` | Barra de espaço |
+| `escape` | Tecla ESC |
+| `back` | Tecla BACKSPACE |
+| `tab` | Tecla TAB |
+| `enter` | Tecla ENTER |
+| `left` | Seta ← |
+| `right` | Seta → |
+| `up` | Seta ↑ |
+| `down` | Seta ↓ |
+| `num_lock` | Tecla NUM LOCK |
+| `scroll_lock` | Tecla SCROLL LOCK |
+| `caps_lock` | Tecla CAPS LOCK |
+| `page_up` | Tecla PAGE UP |
+| `page_down` | Tecla PAGE DOWN |
+| `insert` | Tecla INSERT |
+| `delete` | Tecla DELETE |
+| `end` | Tecla END |
+| `home` | Tecla HOME |
+| `print_screen` | Tecla PRINT SCREEN |
+| `multiply` | Tecla `*` (apenas no numpad) |
+| `add` | Tecla `+` (apenas no numpad) |
+| `subtract` | Tecla `-` (apenas no numpad) |
+| `oem_plus` | Tecla `=`/`+` em teclado padrão US (varia por layout) |
+| `oem_comma` | Tecla `,`/`<` em teclado padrão US (varia por layout) |
+| `oem_minus` | Tecla `-`/`_` em teclado padrão US (varia por layout) |
+| `oem_period` | Tecla `.`/`>` em teclado padrão US (varia por layout) |
+| `muhenkan` | Tecla 無変換 (non-convert) para layouts japoneses |
+| `henkan` | Tecla 変換 (convert) para layouts japoneses |
 
-| Key                   | Description                                                               |
-| --------------------- | ------------------------------------------------------------------------- |
-| `a` - `z`             | Alphabetical letter keys                                                  |
-| `0` - `9`             | Number keys                                                               |
-| `numpad0` - `numpad9` | Numerical keypad keys                                                     |
-| `f1` - `f24`          | Function keys                                                             |
-| `shift`               | Either left or right SHIFT key                                            |
-| `lshift`              | The left SHIFT key                                                        |
-| `rshift`              | The right SHIFT key                                                       |
-| `control`             | Either left or right CTRL key                                             |
-| `lctrl`               | The left CTRL key                                                         |
-| `rctrl`               | The right CTRL key                                                        |
-| `alt`                 | Either left or right ALT key                                              |
-| `lalt`                | The left ALT key                                                          |
-| `ralt`                | The right ALT key                                                         |
-| `lwin`                | The left ⊞ Windows logo key                                               |
-| `rwin`                | The right ⊞ Windows logo key                                              |
-| `space`               | The spacebar key                                                          |
-| `escape`              | The ESCAPE key                                                            |
-| `back`                | The BACKSPACE key                                                         |
-| `tab`                 | The TAB key                                                               |
-| `enter`               | The ENTER key                                                             |
-| `left`                | The ← arrow key                                                           |
-| `right`               | The → arrow key                                                           |
-| `up`                  | The ↑ arrow key                                                           |
-| `down`                | The ↓ arrow key                                                           |
-| `num_lock`            | The NUM LOCK key                                                          |
-| `scroll_lock`         | The SCROLL LOCK key                                                       |
-| `caps_lock`           | The CAPS LOCK key                                                         |
-| `page_up`             | The PAGE UP key                                                           |
-| `page_down`           | The PAGE DOWN key                                                         |
-| `insert`              | The INSERT key                                                            |
-| `delete`              | The DELETE key                                                            |
-| `end`                 | The END key                                                               |
-| `home`                | The HOME key                                                              |
-| `print_screen`        | The PRINT SCREEN key                                                      |
-| `multiply`            | The `*` key (only on numpad)                                              |
-| `add`                 | The `+` key (only on numpad)                                              |
-| `subtract`            | The `-` key (only on numpad)                                              |
-| `decimal`             | The DEL key (only on numpad)                                              |
-| `divide`              | The `/` key (only on numpad)                                              |
-| `volume_up`           | The volume up key                                                         |
-| `volume_down`         | The volume down key                                                       |
-| `volume_mute`         | The volume mute key                                                       |
-| `media_next_track`    | The media next track key                                                  |
-| `media_prev_track`    | The media prev track key                                                  |
-| `media_stop`          | The media stop key                                                        |
-| `media_play_pause`    | The media play/pause key                                                  |
-| `oem_semicolon`       | The `;`/`:` key on a US standard keyboard (varies by keyboard)            |
-| `oem_question`        | The `/`/`?` key on a US standard keyboard (varies by keyboard)            |
-| `oem_tilde`           | The `` ` ``/`~` key on a US standard keyboard (varies by keyboard)        |
-| `oem_open_brackets`   | The `[`/`{` key on a US standard keyboard (varies by keyboard)            |
-| `oem_pipe`            | The `\`/`\|` key on a US standard keyboard (varies by keyboard)           |
-| `oem_close_brackets`  | The `]`/`}` key on a US standard keyboard (varies by keyboard)            |
-| `oem_quotes`          | The `'`/`"` key on a US standard keyboard (varies by keyboard)            |
-| `oem_8`               | The `` ` ``/`¬` key on a UK keyboard (varies by keyboard)                 |
-| `oem_102`             | The `\`/`\|` key next to left Shift on ISO keyboards (varies by keyboard) |
-| `oem_plus`            | The `=`/`+` key on a US standard keyboard (varies by keyboard)            |
-| `oem_comma`           | The `,`/`<` key on a US standard keyboard (varies by keyboard)            |
-| `oem_minus`           | The `-`/`_` key on a US standard keyboard (varies by keyboard)            |
-| `oem_period`          | The `.`/`>` key on a US standard keyboard (varies by keyboard)            |
-| `muhenkan`            | The 無変換 (non-convert) key for Japanese keyboard layouts                |
-| `henkan`              | The 変換 (convert) key for Japanese keyboard layouts                      |
+> Se uma tecla não estiver na lista acima, ela ainda pode ser suportada usando seu caractere no keybinding (ex.: `alt+å` para o caractere norueguês Å).
 
-</details>
-
-If a key is not in the list above, it is likely still supported if you use its character in a keybinding (e.g. `alt+å` for the Norwegian Å character).
-
-> German and US international keyboards treat the right-side alt key differently. For these keyboard layouts, use `ralt+ctrl` instead of `ralt` to bind the right-side alt key.
+> Teclados alemães e US internacionais tratam a tecla alt direita de forma diferente. Para esses layouts, use `ralt+ctrl` em vez de `ralt` para vincular a tecla alt direita.
 
 ### Config: Gaps
 
-The gaps between windows can be changed via the `gaps` property in the config file. Inner and outer gaps are set separately.
+Os espaçamentos entre janelas podem ser alterados via a propriedade `gaps` no arquivo de config. Gaps internos e externos são configurados separadamente.
 
 ```yaml
 gaps:
-  # Gap between adjacent windows.
+  # Espaço entre janelas adjacentes.
   inner_gap: "20px"
 
-  # Gap between windows and the screen edge.
+  # Espaço entre janelas e a borda da tela.
   outer_gap:
     top: "20px"
     right: "20px"
@@ -236,67 +279,67 @@ gaps:
 
 ### Config: Workspaces
 
-Workspaces need to be predefined via the `workspaces` property in the config file. A workspace is automatically assigned to each monitor on startup.
+Workspaces precisam ser predefinidos via a propriedade `workspaces` no arquivo de config. Um workspace é atribuído automaticamente a cada monitor na inicialização.
 
 ```yaml
 workspaces:
-  # This is the unique ID for the workspace. It's used in keybinding
-  # commands, and is also the label shown in 3rd-party apps (e.g. Zebar) if
-  # `display_name` is not provided.
+  # Este é o ID único do workspace. É usado nos comandos de keybinding,
+  # e também é o rótulo mostrado em apps de terceiros (ex.: Zebar) caso
+  # `display_name` não seja fornecido.
   - name: "1"
 
-    # Optional override for the workspace label used in 3rd-party apps.
-    # Does not need to be unique.
+    # Override opcional do rótulo do workspace usado em apps de terceiros.
+    # Não precisa ser único.
     display_name: "Work"
 
-    # Optionally force the workspace on a specific monitor if it exists.
-    # 0 is your leftmost screen, 1 is the next one to the right, and so on.
+    # Opcionalmente força o workspace em um monitor específico, se existir.
+    # 0 é a tela mais à esquerda, 1 é a próxima à direita, e assim por diante.
     bind_to_monitor: 0
 
-    # Optionally prevent workspace from being deactivated when empty.
+    # Opcionalmente evita que o workspace seja desativado quando vazio.
     keep_alive: false
 ```
 
 ### Config: Window rules
 
-Commands can be run when a window is first launched. This is useful for adding window-specific behaviors like always starting a window as fullscreen or assigning to a specific workspace.
+Comandos podem ser executados quando uma janela é aberta pela primeira vez. Isso é útil para adicionar comportamentos específicos, como sempre abrir uma janela em fullscreen ou atribuí-la a um workspace específico.
 
-Windows can be targeted by their process, class, and title. Multiple matching criteria can be used together to target a window more precisely.
+Janelas podem ser filtradas por processo, classe e título. Múltiplos critérios podem ser combinados para atingir uma janela com mais precisão.
 
 ```yaml
 window_rules:
   - commands: ["move --workspace 1"]
     match:
-      # Move browsers to workspace 1.
+      # Move navegadores para o workspace 1.
       - window_process: { regex: "msedge|brave|chrome" }
 
   - commands: ["ignore"]
     match:
-      # Ignores any Zebar windows.
+      # Ignora qualquer janela do Zebar.
       - window_process: { equals: "zebar" }
 
-      # Ignores picture-in-picture windows for browsers.
-      # Note that *both* the title and class must match for the rule to run.
+      # Ignora janelas picture-in-picture de navegadores.
+      # Note que *ambos* título e classe precisam bater para a regra rodar.
       - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
         window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
 ```
 
 ### Config: Window effects
 
-Visual effects can be applied to windows via the `window_effects` option. Currently, colored borders are the only effect available with more to come in the future.
+Efeitos visuais podem ser aplicados às janelas via a opção `window_effects`. Atualmente, bordas coloridas são o único efeito disponível, com mais a caminho no futuro.
 
-> Note: Window effects are exclusive to Windows 11.
+> Nota: Efeitos de janela são exclusivos do Windows 11.
 
 ```yaml
 window_effects:
-  # Visual effects to apply to the focused window.
+  # Efeitos visuais aplicados à janela focada.
   focused_window:
-    # Highlight the window with a colored border.
+    # Destaca a janela com uma borda colorida.
     border:
       enabled: true
       color: "#0000ff"
 
-  # Visual effects to apply to non-focused windows.
+  # Efeitos visuais aplicados às janelas não focadas.
   other_windows:
     border:
       enabled: false
@@ -305,40 +348,40 @@ window_effects:
 
 ### Config: Window behavior
 
-The `window_behavior` config option exists to customize the states that a window can be in (`tiling`, `floating`, `minimized`, and `fullscreen`).
+A opção de config `window_behavior` existe para customizar os estados que uma janela pode assumir (`tiling`, `floating`, `minimized` e `fullscreen`).
 
 ```yaml
 window_behavior:
-  # New windows are created in this state whenever possible.
-  # Allowed values: 'tiling', 'floating'.
+  # Novas janelas são criadas nesse estado sempre que possível.
+  # Valores permitidos: 'tiling', 'floating'.
   initial_state: "tiling"
 
-  # Sets the default options for when a new window is created. This also
-  # changes the defaults for when the state change commands, like
-  # `set-floating`, are used without any flags.
+  # Define as opções padrão para quando uma nova janela é criada. Isso também
+  # muda os padrões para quando comandos de mudança de estado, como
+  # `set-floating`, são usados sem flags.
   state_defaults:
     floating:
-      # Whether to center floating windows by default.
+      # Se deve centralizar janelas floating por padrão.
       centered: true
 
-      # Whether to show floating windows as always on top.
+      # Se deve mostrar janelas floating sempre no topo.
       shown_on_top: false
 
     fullscreen:
-      # Maximize the window if possible. If the window doesn't have a
-      # maximize button, then it'll be made fullscreen normally instead.
+      # Maximiza a janela se possível. Se a janela não tiver botão de
+      # maximizar, ela será colocada em fullscreen normalmente.
       maximized: false
 ```
 
 ### Config: Binding modes
 
-Binding modes are used to modify keybindings while GlazeWM is running.
+Binding modes são usados para modificar keybindings enquanto o GlazeWM está rodando.
 
-A binding mode can be enabled with `wm-enable-binding-mode --name <NAME>` and disabled with `wm-disable-binding-mode --name <NAME>`.
+Um binding mode pode ser ativado com `wm-enable-binding-mode --name <NAME>` e desativado com `wm-disable-binding-mode --name <NAME>`.
 
 ```yaml
 binding_modes:
-  # When enabled, the focused window can be resized via arrow keys or HJKL.
+  # Quando ativado, a janela focada pode ser redimensionada via setas ou HJKL.
   - name: "resize"
     keybindings:
       - commands: ["resize --width -2%"]
@@ -349,26 +392,28 @@ binding_modes:
         bindings: ["k", "up"]
       - commands: ["resize --height -2%"]
         bindings: ["j", "down"]
-      # Press enter/escape to return to default keybindings.
+      # Pressione enter/escape para voltar aos keybindings padrão.
       - commands: ["wm-disable-binding-mode --name resize"]
         bindings: ["escape", "enter"]
 ```
 
-## FAQ
+---
 
-**Q: How do I run GlazeWM on startup?**
+##  FAQ
 
-Right-click the GlazeWM icon in the system tray and select "Run on system startup".
+**P: Como faço o GlazeWM rodar na inicialização do Windows?**
 
-**Q: How can I create `<insert layout>`?**
+Clique com o botão direito no ícone do GlazeWM na bandeja do sistema e selecione "Run on system startup".
 
-You can create custom layouts by changing the tiling direction with `alt+v`. This changes where the next window is placed _in relation to the current window_. If the current window's direction is horizontal, the new window will be placed to the right of it. If it is vertical, it will be placed below it. This also applies when moving windows; the tiling direction of the stationary window will affect where the moved window will be placed.
+**P: Como posso criar `<layout tal>`?**
 
-Community-made scripts like [Dutch-Raptor/GAT-GWM](https://github.com/Dutch-Raptor/GAT-GWM) and [burgr033/GlazeWM-autotiling-python](https://github.com/burgr033/GlazeWM-autotiling-python) can be used to automatically change the tiling direction. Native support for automatic layouts isn't _currently_ supported.
+Você pode criar layouts customizados mudando a direção do tiling com `alt+v`. Isso muda onde a próxima janela será posicionada *em relação à janela atual*. Se a direção da janela atual for horizontal, a nova janela será posicionada à direita dela. Se for vertical, será posicionada abaixo. Isso também se aplica ao mover janelas: a direção de tiling da janela parada afetará onde a janela movida será posicionada.
 
-**Q: How do I create a rule for `<insert application>`?**
+Scripts feitos pela comunidade como [Dutch-Raptor/GAT-GWM](https://github.com/Dutch-Raptor/GAT-GWM) e [burgr033/GlazeWM-autotiling-python](https://github.com/burgr033/GlazeWM-autotiling-python) podem ser usados para mudar automaticamente a direção do tiling. Suporte nativo para layouts automáticos não está *atualmente* disponível.
 
-To match a specific application, you need a command to execute and either the window's process name, title, or class name. For example, if you use Flow-Launcher and want to make the settings window float, you can do the following:
+**P: Como crio uma regra para `<aplicativo tal>`?**
+
+Para atingir um aplicativo específico, você precisa de um comando para executar e o nome do processo, título ou classe da janela. Por exemplo, se você usa o Flow-Launcher e quer que a janela de configurações abra como floating:
 
 ```yaml
 window_rules:
@@ -378,11 +423,21 @@ window_rules:
         window_title: { equals: "Settings" }
 ```
 
-Programs like Winlister or AutoHotkey's Window Spy can be useful for getting info about a window.
+Programas como Winlister ou o Window Spy do AutoHotkey podem ser úteis para obter informações sobre uma janela.
 
-**Q: How can I ignore GlazeWM's keybindings when `<insert application>` is focused?**
+**P: Como posso ignorar os keybindings do GlazeWM quando `<aplicativo tal>` está focado?**
 
-This isn't currently supported, however, the keybinding `alt+shift+p` in the default config is used to disable all other keybindings until `alt+shift+p` is pressed again.
+Isso não é suportado atualmente, porém o keybinding `alt+shift+p` no config padrão é usado para desativar todos os outros keybindings até que `alt+shift+p` seja pressionado novamente.
+
+---
+
+## 🔗 Links úteis
+
+- [Releases / Changelog](https://github.com/glzr-io/GlazeWM/releases)
+- [Discord](https://discord.gg/ud6z3qjRvM)
+- [Config de exemplo (sample-config.yaml)](https://github.com/glzr-io/glazewm/blob/main/resources/assets/sample-config.yaml)
+- [Contribuindo guide](https://github.com/glzr-io/glazewm/blob/main/Contribuindo.md)
+- [Zebar (barra de status)](https://github.com/glzr-io/zebar)
 
 [discord-badge]: https://img.shields.io/discord/1041662798196908052.svg?logo=discord&colorB=7289DA
 [discord-link]: https://discord.gg/ud6z3qjRvM
